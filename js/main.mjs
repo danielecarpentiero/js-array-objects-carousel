@@ -1,3 +1,33 @@
+"use strict";
+
+const locations = [
+  {
+    img: "01.jpg",
+    title: "The Thinking man",
+    desc: "A man pondering alone sitting on a bridge near a lake",
+  },
+  {
+    img: "02.jpg",
+    title: "Beautiful Swiss Town",
+    desc: "This is a beautiful swiss town",
+  },
+  {
+    img: "03.jpg",
+    title: "Big Ben",
+    desc: "This is the Big Ben on the river Thames",
+  },
+  {
+    img: "04.jpg",
+    title: "Dresden by night",
+    desc: "This is a beautiful picture of Dresden by night",
+  },
+  {
+    img: "05.jpg",
+    title: "French Polynesie",
+    desc: "Picture of the french Polynesie",
+  },
+];
+
 const images = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
@@ -94,4 +124,17 @@ start.addEventListener("click", function () {
 
 stop.addEventListener("click", function () {
   clearInterval(slideShowInterval);
+});
+
+itemsAll = document.querySelectorAll(".item");
+
+/* aggiunta ciclo forEach */
+itemsAll.forEach((item, index) => {
+  const description = document.createElement("div");
+  description.classList.add("description");
+  description.innerHTML = `
+    <h2>${locations[index].title}</h2>
+    <p>${locations[index].desc}</p>
+  `;
+  item.appendChild(description);
 });

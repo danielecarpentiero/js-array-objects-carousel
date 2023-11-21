@@ -129,12 +129,12 @@ stop.addEventListener("click", function () {
 itemsAll = document.querySelectorAll(".item");
 
 /* aggiunta ciclo forEach */
-itemsAll.forEach((item, index) => {
+itemsAll.forEach((element, index) => {
   const description = document.createElement("div");
   description.classList.add("description");
   description.innerHTML = `
     <h2>${locations[index].title}</h2>
     <p>${locations[index].desc}</p>
   `;
-  item.appendChild(description);
+  element.appendChild(description);
 });
